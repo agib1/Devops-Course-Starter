@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect
 
 from todo_app.flask_config import Config
-from todo_app.data.session_items import get_items, get_item, add_item, save_item
+from todo_app.data.session_items import get_items
+from todo_app.data.trello_items import add_item
 
 app = Flask(__name__)
 app.config.from_object(Config())
