@@ -16,6 +16,7 @@ correct_todo_items = [Item(2, "Program Function 1", "To Do"), Item(5, "Program F
 @pytest.mark.parametrize("correct_done_item", correct_done_items)
 def test_view_model_done_property(view_model, correct_done_item):
     assert correct_done_item in view_model.done_items
+    assert len(view_model.done_items) == len(correct_done_items)
 
 @pytest.mark.parametrize("correct_doing_item", correct_doing_items)
 def test_view_model_doing_property(view_model, correct_doing_item):
