@@ -76,5 +76,5 @@ Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser
 
 Pytest is used to test functionality
 
-To run all tests , run python3 -m pytest
-To run individual tests, run python3 -m pytests <testfile>
+To run all tests , run `poetry run python3 -m pytest`
+To run individual tests, run `poetry run python3 -m pytests <testfile>`
