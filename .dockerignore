@@ -1,0 +1,9 @@
+.venv
+.env
+.pytest_cache
+.github
+.vscode
+ansible
+.gitignore
+.gitpod.yml
+README.md
