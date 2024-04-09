@@ -78,3 +78,11 @@ Pytest is used to test functionality
 
 To run all tests , run `poetry run python3 -m pytest`
 To run individual tests, run `poetry run python3 -m pytests <testfile>`
+
+## Deploying application to machine with ansible
+
+To deploy the application:
+Copy the ansible folder to the host node
+Update the inventory file with the control nodes to deploy to
+Run the following command:
+    ansible-playbook playbook.yaml -i inventory.yaml
