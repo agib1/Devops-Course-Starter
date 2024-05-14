@@ -86,3 +86,19 @@ Copy the ansible folder to the host node
 Update the inventory file with the control nodes to deploy to
 Run the following command:
     ansible-playbook playbook.yaml -i inventory.yaml
+
+## Deploying application using docker
+
+To create a development sever which allows for flasks detailed logging and rapid changes:
+
+docker build --target development --tag todo-app:dev .
+docker run -dit --env-file .env --publish 8000:5000 --mount "type=bind,source=$(pwd)/todo_app,target=/todo-app/todo_app" todo-app:dev
+
+This will run on localhost:8000
+
+To create a production server:
+
+docker build --target production --tag todo-app:prod .
+docker run -dit --env-file .env --publish 8100:5100 todo-app:prod
+
+This will run on localhost:8100
