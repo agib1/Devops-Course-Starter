@@ -1,4 +1,4 @@
-FROM python:3.11-buster
+FROM python:3.11-buster as base
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
@@ -12,6 +12,10 @@ RUN poetry install --no-root
 
 COPY . /todo-app/
 
-EXPOSE 5000
+FROM base as development
 
-ENTRYPOINT poetry run flask run --host=0.0.0.0
+ENV FLASK_DEBUG=1
+
+CMD poetry run flask run --host=0.0.0.0
+
+EXPOSE 5000
