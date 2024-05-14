@@ -19,3 +19,9 @@ ENV FLASK_DEBUG=1
 CMD poetry run flask run --host=0.0.0.0
 
 EXPOSE 5000
+
+FROM base as production
+
+CMD poetry run flask run --host=0.0.0.0 --port=5100
+
+EXPOSE 5100
