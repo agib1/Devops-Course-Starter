@@ -112,5 +112,5 @@ To test using docker:
 
 ```bash
 docker build --target test --tag todo-app:test .
-docker run -it --env-file .env todo-app:test
+docker run todo-app:test
 ```
