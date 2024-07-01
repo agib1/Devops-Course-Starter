@@ -1,0 +1,53 @@
+<mxfile host="app.diagrams.net" modified="2024-05-14T15:42:52.146Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0" etag="xg_-KtASNxKunaCliQ1S" version="24.4.0" type="device">
+  <diagram name="Page-1" id="xt6xHNcL7z4KURGqLkEG">
+    <mxGraphModel dx="1097" dy="607" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BNa6ydWloFbnuha4gCGV-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="50.0026315789474" as="sourcePoint" />
+            <mxPoint x="370" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="365" y="50" />
+              <mxPoint x="365" y="200" />
+              <mxPoint x="350" y="200" />
+              <mxPoint x="350" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BNa6ydWloFbnuha4gCGV-4" value="Enter to do item" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BNa6ydWloFbnuha4gCGV-3">
+          <mxGeometry x="-0.0105" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BNa6ydWloFbnuha4gCGV-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="50" as="sourcePoint" />
+            <mxPoint x="460" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="470" y="50" />
+              <mxPoint x="470" y="200" />
+              <mxPoint x="480" y="200" />
+              <mxPoint x="480" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BNa6ydWloFbnuha4gCGV-6" value="Move item to done" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BNa6ydWloFbnuha4gCGV-5">
+          <mxGeometry x="0.0164" y="-1" relative="1" as="geometry">
+            <mxPoint y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BNa6ydWloFbnuha4gCGV-1" value="To do app user" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="30" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BNa6ydWloFbnuha4gCGV-2" value="To do app website" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="375" y="210" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BNa6ydWloFbnuha4gCGV-7" value="To do app context diagram" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="45" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
