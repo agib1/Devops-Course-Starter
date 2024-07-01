@@ -7,3 +7,4 @@ ansible
 .gitignore
 .gitpod.yml
 README.md
+**/__pycache__
