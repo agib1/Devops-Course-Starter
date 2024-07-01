@@ -91,8 +91,10 @@ Run the following command:
 
 To create a development sever which allows for flasks detailed logging and rapid changes:
 
+```bash
 docker build --target development --tag todo-app:dev .
 docker run -dit --env-file .env --publish 8000:5000 --mount "type=bind,source=$(pwd)/todo_app,target=/todo-app/todo_app" todo-app:dev
+```
 
 This will run on localhost:8000
 
