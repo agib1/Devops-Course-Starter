@@ -106,3 +106,11 @@ docker run -dit --env-file .env --publish 8100:5100 todo-app:prod
 ```
 
 This will run on localhost:8100
+
+
+To test using docker: 
+
+```bash
+docker build --target test --tag todo-app:test .
+docker run -it --env-file .env todo-app:test
+```
