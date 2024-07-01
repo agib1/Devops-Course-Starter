@@ -100,7 +100,9 @@ This will run on localhost:8000
 
 To create a production server:
 
+```bash
 docker build --target production --tag todo-app:prod .
 docker run -dit --env-file .env --publish 8100:5100 todo-app:prod
+```
 
 This will run on localhost:8100
