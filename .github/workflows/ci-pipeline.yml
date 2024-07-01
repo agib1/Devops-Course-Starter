@@ -17,4 +17,4 @@ jobs:
       - name: Run tests
         shell: bash
         run: |
-          docker run -it todo-app:test
+          docker run todo-app:test
