@@ -25,3 +25,7 @@ FROM base as production
 CMD poetry run flask run --host=0.0.0.0 --port=5100
 
 EXPOSE 5100
+
+FROM base as test
+
+ENTRYPOINT poetry run python3 -m pytest
