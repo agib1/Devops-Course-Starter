@@ -9,8 +9,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       
-      - name: Build and Run test container
+      - name: Build test container
         shell: bash
         run: |
           docker build --target test --tag todo-app:test .
-          docker run -it --env-file .env todo-app:test
+
+      - name: Run tests
+        shell: bash
+        run: |
+          docker run -it todo-app:test
