@@ -118,10 +118,11 @@ docker run todo-app:test
 ## Uploading production docker image to container registery
 
 Log into docker, then build and push the image
+(add --platform if on mac)
 
 ```bash
 docker login
-docker build --target production --tag agib1/todo-app:prod .
+docker build --platform=linux/amd64 --target production --tag agib1/todo-app:prod .
 docker push agib1/todo-app:prod
 ```
 
