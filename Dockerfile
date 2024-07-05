@@ -8,7 +8,7 @@ WORKDIR /todo-app
 
 COPY poetry.lock pyproject.toml /todo-app/
 
-RUN poetry config virtualenvs.create false --local && poetry install --no-root
+RUN poetry install --no-root
 
 COPY . /todo-app/
 
