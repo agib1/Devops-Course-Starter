@@ -1,0 +1,25 @@
+name: Continuous Integration
+on:
+  pull_request:
+    paths-ignore: 
+      - 'README.md'
+  push:
+    paths-ignore: 
+      - 'README.md'
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Build test container
+        shell: bash
+        run: |
+          docker build --target test --tag todo-app:test .
+
+      - name: Run tests
+        shell: bash
+        run: |
+          docker run todo-app:test
