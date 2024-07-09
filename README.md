@@ -145,4 +145,3 @@ To manually redeploy, send a request to the webhook using the <webhook_url> for 
 ```bash
 curl -X POST '<webhook_url>'
 ```
-
