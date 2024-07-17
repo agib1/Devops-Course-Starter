@@ -114,3 +114,34 @@ To run the unit and integration tests using docker:
 docker build --target test --tag todo-app:test .
 docker run todo-app:test
 ```
+
+## Uploading production docker image to container registery
+
+Log into docker, then build and push the image
+(add --platform if on mac)
+
+```bash
+docker login
+docker build --platform=linux/amd64 --target production --tag agib1/todo-app:prod .
+docker push agib1/todo-app:prod
+```
+
+You can find this here: https://hub.docker.com/repository/docker/agib1/todo-app/general
+
+
+## To deploy the container to azure manually
+
+Create an app service plan and a web app through azure cli
+
+```bash
+az appservice plan create --resource-group <resource_group_name> -n <appservice_plan_name> --sku B1 --is-linux
+az webapp create --resource-group <resource_group_name> --plan <appservice_plan_name> --name <webapp_name> --deployment-container-image-name docker.io/agib1/todo-app:prod
+```
+
+You can find this here: https://wa-ag-todoapp.azurewebsites.net/
+
+To manually redeploy, send a request to the webhook using the <webhook_url> for the webapp found in the azure portal under deployment center
+
+```bash
+curl -X POST '<webhook_url>'
+```
