@@ -29,6 +29,18 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Placeholder
-        run: echo Publishing!
+      - name: Login to docker registry
+        uses: docker/login-action@v3
+        with:
+          username: ${{secrets.DOCKER_HUB_USER}}
+          password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
+      - name: Build and push docker image to registry
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{secrets.DOCKER_HUB_USER}}/todo-app:${{github.sha}}, ${{secrets.DOCKER_HUB_USER}}/todo-app:latest
+
+      - name: Deploy image to web app
+        run: curl -dH -X POST '${{secrets.AZURE_WEBHOOK}}'
