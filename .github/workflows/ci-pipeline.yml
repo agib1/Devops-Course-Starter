@@ -36,13 +36,12 @@ jobs:
           password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
       - name: Build and push docker image to registry
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: Dockerfile
-          target: "production"
-          push: true
-          tags: ${{secrets.DOCKER_HUB_USER}}/todo-app:${{github.sha}}, ${{secrets.DOCKER_HUB_USER}}/todo-app:latest
+        shell: bash
+        run: |
+          docker build --target production --tag ${{secrets.DOCKER_HUB_USER}}/todo-app:${{github.sha}} .
+          docker build --target production --tag ${{secrets.DOCKER_HUB_USER}}/todo-app:latest .
+          docker push ${{secrets.DOCKER_HUB_USER}}/todo-app:${{github.sha}}
+          docker push ${{secrets.DOCKER_HUB_USER}}/todo-app:latest
 
       - name: Deploy image to web app
         run: curl -dH -X POST '${{secrets.AZURE_WEBHOOK}}'
