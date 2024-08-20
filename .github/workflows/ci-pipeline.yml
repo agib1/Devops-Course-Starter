@@ -23,3 +23,12 @@ jobs:
         shell: bash
         run: |
           docker run todo-app:test
+  
+  deploy:
+    needs: build
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: echo Publishing!
+
