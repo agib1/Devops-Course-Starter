@@ -39,6 +39,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          target: "production"
           push: true
           tags: ${{secrets.DOCKER_HUB_USER}}/todo-app:${{github.sha}}, ${{secrets.DOCKER_HUB_USER}}/todo-app:latest
 
