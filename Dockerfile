@@ -4,13 +4,13 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 
 ENV PATH="${PATH}:/root/.local/bin"
 
-WORKDIR /todo-app
+WORKDIR /todo_app
 
-COPY poetry.lock pyproject.toml /todo-app/
+COPY poetry.lock pyproject.toml /todo_app/
 
 RUN poetry install --no-root
 
-COPY . /todo-app/
+COPY . /todo_app/
 
 FROM base as development
 
