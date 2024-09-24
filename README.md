@@ -39,15 +39,17 @@ $ cp .env.template .env  # (first time only)
 The `.env` file is used by flask to set environment variables when running `flask run`. This enables things like development mode (which also enables features like hot reloading when you make a file change). There's also a [SECRET_KEY](https://flask.palletsprojects.com/en/2.3.x/config/#SECRET_KEY) variable which is used to encrypt the flask session cookie.
 
 
-## Setting up Trello Integration 
+## Setting up MongoDB Integration 
 
-This app uses trello API for storing the todo items
+This app uses MongoDB for storing the todo items
 
-Set up trello account
+Create a cosmosDB account and a MongoDB database via Azure CLI
 
-Set up trello board 
+```bash
+az cosmosdb --name <account-name> --resource-group <rg-name> --kind MongoDB --capabilities EnableServerless --server-version 4.2
 
-Create API key and token
+az cosmosdb mongodb database create --account-name <account-name> --name <db-name> --resource-group <rg-name>
+```
 
 Update env file to include details
 
