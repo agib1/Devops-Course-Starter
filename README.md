@@ -147,3 +147,24 @@ To manually redeploy, send a request to the webhook using the <webhook_url> for 
 ```bash
 curl -X POST '<webhook_url>'
 ```
+
+## Application encryption details
+
+All data is encrypted in transit and at rest by Azure, for end-to-end encryption.
+
+### Encryption-at-rest
+
+Encryption-at-rest is enforced for the MongoDB database as Azure CosmosDB stores its databases on SDDs, with storage keys retrieved via request, abstracting user details in a secure connection. Data is peridoically backed up in blob storage.
+
+### Encryption-at-transit
+
+Encryption-at-transit is enforced. 'HTTPS only' has been enabled for the app services, resulting in http being redirected to https
+
+
+## OAuth login
+
+The app is authenticated by OAuth
+
+Create a new OAuth app in github developer settings
+
+Update env file to include client id and secret
