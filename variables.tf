@@ -18,6 +18,7 @@ variable "OAUTH_CLIENT_SECRET" {
 
 variable "SECRET_KEY" {
     description = "Azure/Flask var"
+    sensitive = true
 }
 
 variable "WEBSITES_ENABLE_APP_SERVICE_STORAGE" {

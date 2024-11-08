@@ -52,14 +52,24 @@ jobs:
           push: true
           tags: ${{secrets.DOCKER_HUB_USER}}/todo-app:${{github.sha}}, ${{secrets.DOCKER_HUB_USER}}/todo-app:latest
 
-      # - name: Azure Login action
-      #   uses: azure/login@v2
-      #   with:
-      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
-      #     enable-AzPSSession: true
-
       - name: Terraform init 
         run: terraform init
 
+      - name: Terraform apply
+        id: tf-apply
+        run: terraform apply
+        env: 
+          prefix: "test"
+          FLASK_APP: "todo_app/app"
+          OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
+          OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          WEBSITES_ENABLE_APP_SERVICE_STORAGE: "false"
+          WEBSITES_PORT: "5100"
+
+      - name: Terraform output 
+        id: tf-output 
+        run: echo "webhook_url=$(terraform output webhook_url)" >> $GITHUB_OUTPUT
+
       - name: Deploy image to web app
-        run: curl -dH -X POST '${{secrets.AZURE_WEBHOOK}}'
+        run: curl -dH -X POST '${{ steps.tf-output.outputs.webhook_url }}'
