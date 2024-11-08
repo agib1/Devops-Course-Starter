@@ -101,5 +101,7 @@ resource "azurerm_cosmosdb_mongo_database" "main" {
   name                = "${var.prefix}-tf-to-do-db"
   resource_group_name = resource.azurerm_cosmosdb_account.main.resource_group_name
   account_name        = resource.azurerm_cosmosdb_account.main.name
+
+  lifecycle { prevent_destroy = true }
 }
 
