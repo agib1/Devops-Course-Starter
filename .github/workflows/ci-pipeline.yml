@@ -69,7 +69,8 @@ jobs:
 
       - name: Terraform output 
         id: tf-output 
-        run: echo "webhook_url=$(terraform output webhook_url)" >> $GITHUB_OUTPUT
+        run: |
+          echo "webhook_url=$(terraform output webhook_url | sed 's/"//g')" >> $GITHUB_OUTPUT
 
       - name: Deploy image to web app
-        run: curl -dH -X POST ${{ steps.tf-output.outputs.webhook_url }}
+        run: curl -dH -X POST '${{ steps.tf-output.outputs.webhook_url }}'
