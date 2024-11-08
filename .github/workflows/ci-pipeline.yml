@@ -57,7 +57,7 @@ jobs:
 
       - name: Terraform apply
         id: tf-apply
-        run: terraform apply
+        run: terraform apply -auto-approve
         env: 
           TF_VAR_prefix: "test"
           TF_VAR_FLASK_APP: "todo_app/app"
