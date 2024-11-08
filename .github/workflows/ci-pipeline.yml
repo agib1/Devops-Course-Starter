@@ -59,13 +59,13 @@ jobs:
         id: tf-apply
         run: terraform apply
         env: 
-          prefix: "test"
-          FLASK_APP: "todo_app/app"
-          OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
-          OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          WEBSITES_ENABLE_APP_SERVICE_STORAGE: "false"
-          WEBSITES_PORT: "5100"
+          TF_VAR_prefix: "test"
+          TF_VAR_FLASK_APP: "todo_app/app"
+          TF_VAR_OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
+          TF_VAR_OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
+          TF_VAR_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          TF_VAR_WEBSITES_ENABLE_APP_SERVICE_STORAGE: "false"
+          TF_VAR_WEBSITES_PORT: "5100"
 
       - name: Terraform output 
         id: tf-output 
