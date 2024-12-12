@@ -13,6 +13,7 @@ pytest = "^8.0.0"
 pymongo = "^4.8.0"
 mongomock = "^4.2.0.post1"
 flask-dance = "^7.1.0"
+loggly-python-handler = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 

@@ -168,3 +168,30 @@ The app is authenticated by OAuth
 Create a new OAuth app in github developer settings
 
 Update env file to include client id and secret
+
+## Terraform 
+
+Terraform is used to deploy the infrastructure to azure
+
+All azure vars should be set locally in terraform.tfvars or in github actions
+
+To deploy locally:
+
+```bash
+terraform apply
+```
+
+Then retrieve the webhook url output
+
+```bash
+curl -X POST '<webhook_url>'
+```
+
+## Logging
+
+The app includes logging via loggly
+
+Set the variable LOGGLY_TOKEN using a token generated in loggly
+
+Set the varuable LOG_LEVEL to set the log level to either debug, info, warning or error.
+
