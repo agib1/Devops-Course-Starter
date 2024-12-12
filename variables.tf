@@ -32,3 +32,7 @@ variable "WEBSITES_PORT" {
 variable "LOGGLY_TOKEN" {
     description = "loggly token"
 }
+
+variable "LOG_LEVEL" {
+    description = "log level"
+}

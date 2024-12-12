@@ -53,6 +53,7 @@ resource "azurerm_linux_web_app" "main" {
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "${var.WEBSITES_ENABLE_APP_SERVICE_STORAGE}"
     "WEBSITES_PORT" = "${var.WEBSITES_PORT}"
     "LOGGLY_TOKEN" = "{var.LOGGLY_TOKEN}"
+    "LOG_LEVEL" = "{var.DEBUG}"
   }
 
 }

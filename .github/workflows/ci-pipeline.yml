@@ -66,6 +66,7 @@ jobs:
           TF_VAR_WEBSITES_ENABLE_APP_SERVICE_STORAGE: "false"
           TF_VAR_WEBSITES_PORT: "5100"
           TF_VAR_LOGGLY_TOKEN: ${{ secrets.LOGGLY_TOKEN }}
+          TF_VAR_LOG_LEVEL: "DEBUG"
 
       - name: Terraform output 
         id: tf-output 
