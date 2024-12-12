@@ -52,6 +52,7 @@ resource "azurerm_linux_web_app" "main" {
     "SECRET_KEY" = "${var.SECRET_KEY}"
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "${var.WEBSITES_ENABLE_APP_SERVICE_STORAGE}"
     "WEBSITES_PORT" = "${var.WEBSITES_PORT}"
+    "LOGGLY_TOKEN" = "{var.LOGGLY_TOKEN}"
   }
 
 }

@@ -28,3 +28,7 @@ variable "WEBSITES_ENABLE_APP_SERVICE_STORAGE" {
 variable "WEBSITES_PORT" {
     description = "Azure/Docker var"
 }
+
+variable "LOGGLY_TOKEN" {
+    description = "loggly token"
+}
